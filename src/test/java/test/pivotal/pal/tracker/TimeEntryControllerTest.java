@@ -35,6 +35,7 @@ public class TimeEntryControllerTest {
 
         long timeEntryId = 1L;
         TimeEntry expectedResult = new TimeEntry(timeEntryId, projectId, userId, LocalDate.parse("2017-01-08"), 8);
+
         doReturn(expectedResult)
             .when(timeEntryRepository)
             .create(any(TimeEntry.class));
@@ -52,6 +53,7 @@ public class TimeEntryControllerTest {
         long projectId = 123L;
         long userId = 456L;
         TimeEntry expected = new TimeEntry(timeEntryId, projectId, userId, LocalDate.parse("2017-01-08"), 8);
+
         doReturn(expected)
             .when(timeEntryRepository)
             .find(timeEntryId);
@@ -95,6 +97,7 @@ public class TimeEntryControllerTest {
         long projectId = 987L;
         long userId = 654L;
         TimeEntry expected = new TimeEntry(timeEntryId, projectId, userId, LocalDate.parse("2017-01-07"), 4);
+
         doReturn(expected)
             .when(timeEntryRepository)
             .update(eq(timeEntryId), any(TimeEntry.class));
